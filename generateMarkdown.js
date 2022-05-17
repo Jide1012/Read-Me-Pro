@@ -5,19 +5,20 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(userData) {
-  if (userData.License === 'GNU General Public License (GPL)') {
+  if (userData.license === 'GPL 3.0') {
     return '(!(License: GPL v3)(https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)';
-  } else if (userData.License === 'Apache License'){
+  } else if (userData.License === 'APACHE 2.0'){
     return '(![License] [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
-  } else if (userData.License === 'BSD License'){
+  } else if (userData.License === 'BSD'){
     return '(![License] [![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)';
-  } else if (userData.License === 'MIT License'){
+  } else if (userData.License === 'MIT'){
     return '(![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
 
     
 
   }
 }
+
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
@@ -663,8 +664,8 @@ function renderLicense(userData) {
     to attach them to the start of each source file to most effectively
     state the exclusion of warranty; and each file should have at least
     the "copyright" line and a pointer to where the full notice is found.
-    ${projectDescription}
-Copyright (C) ${new Date().getFullYear()}  ${name}
+    ${userData.Description}
+Copyright (C) ${new Date().getFullYear()}  ${userData.Name}
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
@@ -678,7 +679,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 Also add information on how to contact you by electronic and paper mail.
 If the program does terminal interaction, make it output a short
 notice like this when it starts in an interactive mode:
-${title}  Copyright (C) ${new Date().getFullYear()}  ${name}
+${userData.Title}  Copyright (C) ${new Date().getFullYear()}  ${userData.Name}
 This program comes with ABSOLUTELY NO WARRANTY; for details type 'show w'.
 This is free software, and you are welcome to redistribute it
 under certain conditions; type 'show c' for details.
@@ -696,7 +697,7 @@ the library.  If this is what you want to do, use the GNU Lesser General
 Public License instead of this License.  But first, please read
 <https://www.gnu.org/licenses/why-not-lgpl.html>.
     `;
-  } else if (license === 'Apache License') {
+  } else if (userData.License === 'APACHE 2.0') {
     return `
     Apache License
 Version 2.0, January 2004
@@ -883,7 +884,7 @@ file or class name and description of purpose be included on the
 same "printed page" as the copyright notice for easier
 identification within third-party archives.
 
-Copyright ${new Date().getFullYear()} ${name}
+Copyright ${new Date().getFullYear()} ${userData.Name}
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -894,10 +895,10 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
     `;
-  } else if (license === 'BSD License') {
+  } else if (userData.License === 'BSD') {
     return `
     BSD License
-    Copyright (c) ${new Date().getFullYear()} ${name}
+    Copyright (c) ${new Date().getFullYear()} ${userData.Name}
     Redistribution and use in source and binary forms, with or without
     modification, are permitted provided that the following conditions are met:
     1. Redistributions of source code must retain the above copyright notice, this
@@ -918,10 +919,10 @@ limitations under the License.
     CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
     WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIIBILITY OF SUCH DAMAGE.
     `; 
-  } else if (license === 'MIT License') {
+  } else if (userData.License === 'MIT') {
     return `
     MIT License
-Copyright (c) ${new Date().getFullYear()} ${name}
+Copyright (c) ${new Date().getFullYear()} ${userData.Name}
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
@@ -965,7 +966,7 @@ function generateMarkdown(userData) {
   ## Usage
   ${userData.Usage}
   ## License
-  ${userData.License}
+  ${renderLicense(userData)}
   ## Contributing
   ${userData.Contributing}
   ## Tests
