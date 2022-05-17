@@ -1,8 +1,7 @@
-<<<<<<< HEAD
 
-  # undefined  undefined
+  # j  undefined
   ## Description
-  undefined
+  j
   ## Table of Contents (Optional)
   - [Installation](#installation)
   - [Usage](#usage)
@@ -13,19 +12,16 @@
   ## Installation
   j
   ## Usage
-  undefined
+  j
   ## License
-  
+  MIT
   ## Contributing
-  undefined
+  j
   ## Tests
-  undefined
+  
   ## Questions
   | My Contact Info|
   |----------|
-  |undefined|
-  |GitHub: undefined|
+  
+  |GitHub: j|
   |My Email: j|
-=======
-# Read-Me-Pro
->>>>>>> 8d4bfef7e3cf6cfffc8e5f1f11c031c88a95751a

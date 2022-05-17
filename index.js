@@ -121,6 +121,24 @@ inquirer
 
 
 
+        },
+        {
+
+            name: "Name",
+            message: "What is your name",
+            type: "input",
+            validate: NameInput => {
+                if (NameInput) {
+                    return true
+
+                }
+                else {
+                    console.log('Please Enter your Name')
+
+                }
+
+            }
+
         }
 
 

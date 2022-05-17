@@ -947,12 +947,12 @@ SOFTWARE.
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(userData) {
-  const {projectName, projectDescription, Installation, usage, license, contributing, tests, name, githubUserName, email} = userData;
-
+  // const {projectName, projectDescription, Installation, usage, license, contributing, tests, name, githubUserName, email} = userData;
+  console.log(userData.Title)
   return `
-  # ${projectName}  ${renderLicenseBadge(userData)}
+  # ${userData.Title}  ${renderLicenseBadge(userData)}
   ## Description
-  ${projectDescription}
+  ${userData.Description}
   ## Table of Contents (Optional)
   - [Installation](#installation)
   - [Usage](#usage)
@@ -961,21 +961,21 @@ function generateMarkdown(userData) {
   - [Tests](#tests)
   - [Questions](#questions)
   ## Installation
-  ${Installation}
+  ${userData.Installation}
   ## Usage
-  ${usage}
+  ${userData.Usage}
   ## License
-  
+  ${userData.License}
   ## Contributing
-  ${contributing}
+  ${userData.Contributing}
   ## Tests
-  ${tests}
+  
   ## Questions
   | My Contact Info|
   |----------|
-  |${name}|
-  |GitHub: ${githubUserName}|
-  |My Email: ${email}|
+  |Name:${userData.Name}
+  |GitHub: ${userData.github}|
+  |My Email: ${userData.email}|
 `;
 }
 
